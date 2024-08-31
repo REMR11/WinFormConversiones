@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WinFormConversiones
+﻿namespace WinFormConversiones
 {
     /// <summary>
     /// Listado de conversiones
@@ -26,7 +20,7 @@ namespace WinFormConversiones
         /// <summary>
         /// Atributos utilizados
         /// </summary>
-        private float baseTemperature;
+        private double baseTemperature;
         private TipoConversion optionConverter;
 
         /// <summary>
@@ -39,23 +33,23 @@ namespace WinFormConversiones
         /// obtenida de las propiedades
         /// </summary>
         /// <returns>float Temperatura convertidf</returns>
-        public float GetTemperature()
+        public double GetTemperature()
         {
-            float result = 0.0f;
+            double result = 0.0f;
             switch (optionConverter)
             {
                 case TipoConversion.CelsiusAKelvin:
-                    result = baseTemperature * 273.15f; break;
+                    result = baseTemperature * 273.15; break;
                 case TipoConversion.CelsiusAFahrenheit:
-                    result = (baseTemperature * 1.8f) + 32; break;
+                    result = (baseTemperature * 1.8) + 32; break;
                 case TipoConversion.FahrenheitACelsius:
-                    result = (baseTemperature - 32) / 1.8f; break;
+                    result = (baseTemperature - 32) / 1.8; break;
             }
             return result;
         }
 
         // Propiedades
-        public float BaseTemperature
+        public double BaseTemperature
         {
             get { return baseTemperature; }
             set { baseTemperature = value; }
